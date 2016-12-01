@@ -17,7 +17,7 @@ This sample application will have one route for each of the patterns listed abov
 Eventually this sample application will be described in a post on [The Meteor Chef](http://themeteorchef.com)
 
 Based on [base](https://github.com/themeteorchef/base).
-This means ReactJS and FlowRouter rather than Blaze and Iron-Router.
+This means ReactJS and ReactRouter rather than Blaze and Iron-Router or FlowRouter.
 
 To run this app:
 
