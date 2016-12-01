@@ -1,13 +1,14 @@
 import React from 'react';
 import { Jumbotron } from 'react-bootstrap';
 
+const version = Meteor.valueOf('version').release; // get the version of Meteor in use
+
 const Index = () => (
   <div className="Index">
     <Jumbotron className="text-center">
-      <h2>Base</h2>
-      <p>A starting point for Meteor applications.</p>
-      <p><a className="btn btn-success" href="https://themeteorchef.com/base" role="button">Read the Documentation</a></p>
-      <p style={ { fontSize: '16px', color: '#aaa' } }>Currently at v4.10.0</p>
+      <h2>Meteor Pub-Sub</h2>
+      <p>A sample application that illustrates pub-sub patterns in MeteorJS.</p>
+      <p>Running { version }</p>
     </Jumbotron>
   </div>
 );

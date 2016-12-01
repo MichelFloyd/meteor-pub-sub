@@ -7,7 +7,7 @@ This application illustrates the use of various Meteor pub-sub patterns includin
 * Drilling into a single document and getting the remaining keys
 * Pagination
 * Joining two collections in a publication using the [reywood:publish-composite](https://atmospherejs.com/reywood/publish-composite) package
-* Displaying two joined collections
+* Displaying data from two joined collections together using helpers
 * Subscribing based on a route parameter
 * Reactively displaying new documents
 * Observing changes
@@ -18,3 +18,9 @@ Eventually this sample application will be described in a post on [The Meteor Ch
 
 Based on [base](https://github.com/themeteorchef/base).
 This means ReactJS and FlowRouter rather than Blaze and Iron-Router.
+
+To run this app:
+
+ 1. git clone https://github.com/MichelFloyd/meteor-pub-sub.git
+ 1. meteor npm install --save jquery bootstrap react react-dom react-router react-bootstrap react-komposer react-router-bootstrap jquery-validation babel-runtime bcrypt
+
