@@ -1,6 +1,6 @@
 // Create 1000 dummy documents, one per second, to highlight reactivity
 import {  Meteor } from 'meteor/meteor';
-import Documents from '../../api/documents/documents';
+import Documents from '/imports/api/documents/documents';
 
 Documents.remove({}); // start with a blank slate
 let i = 0;
