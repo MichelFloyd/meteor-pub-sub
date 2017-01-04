@@ -7,5 +7,5 @@ let i = 0;
 const interval = Meteor.setInterval(()=>{
   Documents.insert({ title: "Document No. " + i, body: "Inserted at " + new Date() });
   i++;
-  if ( i > 1000 ) Meteor.clearInterval(interval);
+  if ( i >= 1000 ) Meteor.clearInterval(interval);
 },1000);

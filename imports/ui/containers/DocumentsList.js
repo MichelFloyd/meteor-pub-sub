@@ -7,7 +7,7 @@ import Loading from '../components/Loading.js';
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('documents.list');
   if (subscription.ready()) {
-    const documents = Documents.find().fetch();
+    const documents = Documents.find({},{sort: {title: 1}}).fetch();
     onData(null, { documents });
   }
 };
