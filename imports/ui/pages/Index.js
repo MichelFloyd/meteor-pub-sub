@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron } from 'react-bootstrap';
 
+//noinspection JSCheckFunctionSignatures
 const version = Meteor.valueOf('version').release; // get the version of Meteor in use
 
 const Index = () => (

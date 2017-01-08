@@ -13,6 +13,7 @@ export default class ResetPassword extends React.Component {
   }
 
   render() {
+    //noinspection JSUnusedGlobalSymbols
     return (
       <div className="ResetPassword">
         <Row>

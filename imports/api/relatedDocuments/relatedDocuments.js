@@ -3,7 +3,7 @@ import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Factory } from 'meteor/dburles:factory';
 
-const Documents = new Mongo.Collection('RelatedDocuments');
+const RelatedDocuments = new Mongo.Collection('RelatedDocuments');
 export default RelatedDocuments;
 
 RelatedDocuments.allow({
