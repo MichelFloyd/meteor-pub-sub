@@ -8,6 +8,7 @@ export default class Signup extends React.Component {
     handleSignup({ component: this });
   }
 
+  //noinspection JSMethodCanBeStatic
   handleSubmit(event) {
     event.preventDefault();
   }

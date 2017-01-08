@@ -7,6 +7,7 @@ export default class RecoverPassword extends React.Component {
     handleRecoverPassword({ component: this });
   }
 
+  //noinspection JSMethodCanBeStatic
   handleSubmit(event) {
     event.preventDefault();
   }

@@ -7,6 +7,7 @@ export default class ResetPassword extends React.Component {
     handleResetPassword({ component: this, token: this.props.params.token });
   }
 
+  //noinspection JSMethodCanBeStatic
   handleSubmit(event) {
     event.preventDefault();
   }
