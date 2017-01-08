@@ -19,8 +19,8 @@ const handleRemove = (_id) => {
 
 const ViewDocument = ({ doc }) => (
   <div className="ViewDocument">
-    <Alert>This shows a single document. The publication that this view subscribes to includes the <em>createdAt</em> key
-      which is not included in the list view publication.
+    <Alert>
+      This shows a single document. The publication that this view subscribes to includes the <em>body</em> and <em>createdAt</em> keys which are not included in the list view publication.
     </Alert>
     <div className="page-header clearfix">
       <h4 className="pull-left">{ doc.title }</h4>

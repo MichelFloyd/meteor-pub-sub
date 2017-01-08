@@ -8,7 +8,8 @@ const Documents = () => (
     <Row>
       <Col xs={ 12 }>
         <Alert>This is a basic reactive list which shows all the items in the <em>Documents</em> collection, sorted by
-          title. The server is adding a new document every second, up to 1000 documents.
+          title. The server is adding a new document every second, up to 1000 documents. Click on any document to load
+          a detailed view which will display more fields for that single document.
         </Alert>
         <div className="page-header clearfix">
           <h4 className="pull-left"><NumberOfDocuments />&nbsp;Documents</h4>

@@ -36,3 +36,4 @@ ddp-rate-limiter@1.0.6
 shell-server@0.2.1
 msavin:mongol
 percolate:synced-cron
+reywood:publish-composite
