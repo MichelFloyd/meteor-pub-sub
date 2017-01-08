@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonToolbar, ButtonGroup, Button, Alert } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { removeDocument } from '../../api/documents/methods.js';
@@ -19,6 +19,9 @@ const handleRemove = (_id) => {
 
 const ViewDocument = ({ doc }) => (
   <div className="ViewDocument">
+    <Alert>This shows a single document. The publication that this view subscribes to includes the <em>createdAt</em> key
+      which is not included in the list view publication.
+    </Alert>
     <div className="page-header clearfix">
       <h4 className="pull-left">{ doc.title }</h4>
       <ButtonToolbar className="pull-right">
