@@ -1,8 +1,8 @@
 # Meteor Pub-Sub Example App
 This application illustrates the use of various Meteor pub-sub patterns including
 
-* Publishing a publication, subscribing to it, then displaying a list of documents
-* Displaying a loading template while waiting for a subscription to be ready
+* Publishing a publication, subscribing to it, then displaying a list of documents (already in base)
+* Displaying a loading template while waiting for a subscription to be ready (already in base, basically a feature of _composeWithTracker_ from _react-komposer_)
 * Publishing many documents with a subset of keys
 * Drilling into a single document and getting the remaining keys
 * Pagination

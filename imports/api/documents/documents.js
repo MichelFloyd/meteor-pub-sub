@@ -26,6 +26,10 @@ Documents.schema = new SimpleSchema({
     type: String,
     label: 'The body of the document.',
   },
+  createdAt: {
+    type: Date,
+    label: 'The creation date/time of the document',
+  },
 });
 
 Documents.attachSchema(Documents.schema);

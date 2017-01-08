@@ -9,7 +9,7 @@ const Index = () => (
       <h2>Meteor Pub-Sub</h2>
       <p>A sample application that illustrates pub-sub patterns in MeteorJS.</p>
       <p>Running { version }</p>
-      <p>Hit ctrl-m to examine data with mongol</p>
+      <p>Hit ctrl-m to examine data with <a href="https://atmospherejs.com/msavin/mongol" target="new">mongol</a></p>
     </Jumbotron>
   </div>
 );

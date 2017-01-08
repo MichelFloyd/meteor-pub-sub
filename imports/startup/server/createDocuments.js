@@ -5,7 +5,8 @@ import Documents from '/imports/api/documents/documents';
 Documents.remove({}); // start with a blank slate
 let i = 0;
 const interval = Meteor.setInterval(()=>{
-  Documents.insert({ title: "Document No. " + i, body: "Inserted at " + new Date() });
+  const now = new Date();
+  Documents.insert({ title: "Document No. " + i, body: "Inserted at " + now, createdAt: now });
   i++;
   if ( i >= 1000 ) Meteor.clearInterval(interval);
 },1000);
