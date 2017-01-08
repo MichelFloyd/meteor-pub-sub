@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, Alert } from 'react-bootstrap';
 import DocumentsList from '../containers/DocumentsList.js';
 import NumberOfDocuments from '../containers/NumberOfDocuments.js';
 
@@ -7,6 +7,9 @@ const Documents = () => (
   <div className="Documents">
     <Row>
       <Col xs={ 12 }>
+        <Alert>This is a basic reactive list which shows all the items in the <em>Documents</em> collection, sorted by
+          title. The server is adding a new document every second, up to 1000 documents.
+        </Alert>
         <div className="page-header clearfix">
           <h4 className="pull-left"><NumberOfDocuments />&nbsp;Documents</h4>
           <Button
