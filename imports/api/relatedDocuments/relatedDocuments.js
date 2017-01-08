@@ -4,7 +4,6 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Factory } from 'meteor/dburles:factory';
 
 const RelatedDocuments = new Mongo.Collection('RelatedDocuments');
-export default RelatedDocuments;
 
 RelatedDocuments.allow({
   insert: () => false,
@@ -19,7 +18,7 @@ RelatedDocuments.deny({
 });
 
 RelatedDocuments.schema = new SimpleSchema({
-  number: {
+  sequence: {
     type: Number,
     label: 'Sequence Number',
   },
@@ -30,3 +29,4 @@ RelatedDocuments.schema = new SimpleSchema({
 });
 
 RelatedDocuments.attachSchema(RelatedDocuments.schema);
+export default RelatedDocuments;
