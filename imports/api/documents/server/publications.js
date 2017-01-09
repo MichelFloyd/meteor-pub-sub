@@ -20,8 +20,8 @@ Meteor.publishComposite('documents.withRelated', (n) => {
     },
     children: [
       {
-        find(doc){
-          return RelatedDocuments.find({documentId: doc._id})
+        find({_id}){
+          return RelatedDocuments.find({documentId: _id})
         }
       }
     ]

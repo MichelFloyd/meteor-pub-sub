@@ -32,7 +32,7 @@ const ViewDocument = ({ doc }) => (
       </ButtonToolbar>
     </div>
     <em>body:</em> { doc.body }<br/>
-    <em>createdAt:</em> { doc.createdAt.toLocaleString() }
+    <em>createdAt:</em> { doc.createdAt && doc.createdAt.toLocaleString() }
   </div>
 );
 
