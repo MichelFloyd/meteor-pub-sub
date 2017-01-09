@@ -29,6 +29,9 @@ Documents.schema = new SimpleSchema({
   createdAt: {
     type: Date,
     label: 'The creation date/time of the document',
+    autoValue(){
+      if (this.isInsert) return new Date();
+    }
   },
 });
 

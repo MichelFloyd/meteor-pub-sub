@@ -4,17 +4,18 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
-import App from '../../ui/layouts/App.js';
-import Documents from '../../ui/pages/Documents.js';
-import NewDocument from '../../ui/pages/NewDocument.js';
-import EditDocument from '../../ui/containers/EditDocument.js';
-import ViewDocument from '../../ui/containers/ViewDocument.js';
-import Index from '../../ui/pages/Index.js';
-import Login from '../../ui/pages/Login.js';
-import NotFound from '../../ui/pages/NotFound.js';
-import RecoverPassword from '../../ui/pages/RecoverPassword.js';
-import ResetPassword from '../../ui/pages/ResetPassword.js';
-import Signup from '../../ui/pages/Signup.js';
+import App from '../../ui/layouts/App';
+import Documents from '../../ui/pages/Documents';
+import DocumentsComposite from '../../ui/pages/Documents-composite';
+import NewDocument from '../../ui/pages/NewDocument';
+import EditDocument from '../../ui/containers/EditDocument';
+import ViewDocument from '../../ui/containers/ViewDocument';
+import Index from '../../ui/pages/Index';
+import Login from '../../ui/pages/Login';
+import NotFound from '../../ui/pages/NotFound';
+import RecoverPassword from '../../ui/pages/RecoverPassword';
+import ResetPassword from '../../ui/pages/ResetPassword';
+import Signup from '../../ui/pages/Signup';
 
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
@@ -31,6 +32,7 @@ Meteor.startup(() => {
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } onEnter={ authenticate } />
         <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
+        <Route name="documents-composite" path="/documents-composite" component={ DocumentsComposite } onEnter={ authenticate } />
         <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
         <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
         <Route name="viewDocument" path="/documents/:_id" component={ ViewDocument } onEnter={ authenticate } />

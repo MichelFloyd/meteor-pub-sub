@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import Documents from '../documents';
+import RelatedDocuments from '/imports/api/relatedDocuments/relatedDocuments';
 
 // note that this publication returns a subset of keys for all documents - only what is displayed in the list view
 Meteor.publish('documents.list', () => Documents.find({},{fields: {title: 1}}));
@@ -11,11 +12,18 @@ Meteor.publish('documents.view', (_id) => {
   return Documents.find(_id);
 });
 
-Meteor.publishComposite('recentDocumentsWithRelated',{
-  find(){ Documents.find({}, {sort: {createdAt: -1}, limit: 10})},
-  children: [
-    {
-      find(doc){ RelatedDocuments.find({documentId: doc._id})}
-    }
-  ]
+Meteor.publishComposite('documents.withRelated', (n) => {
+  return {
+    find(){
+      check(n, Number);
+      return Documents.find({}, {sort: {createdAt: -1}, limit: n});
+    },
+    children: [
+      {
+        find(doc){
+          return RelatedDocuments.find({documentId: doc._id})
+        }
+      }
+    ]
+  }
 });
