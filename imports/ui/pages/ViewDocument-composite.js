@@ -33,6 +33,7 @@ const ViewDocument = ({ doc }) => (
     </div>
     <em>body:</em> { doc.body }<br/>
     <em>createdAt:</em> { doc.createdAt.toLocaleString() }
+    <RelatedDocumentsList documentId={ doc._id } />
   </div>
 );
 
