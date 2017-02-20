@@ -13,5 +13,5 @@ const interval = Meteor.setInterval(()=>{
     RelatedDocuments.insert({sequence, documentId});
     sequence++;
   }
-  if ( i >= 1000 ) Meteor.clearInterval(interval);
-},1000);
+  if ( i >= 500 ) Meteor.clearInterval(interval);
+},2000);

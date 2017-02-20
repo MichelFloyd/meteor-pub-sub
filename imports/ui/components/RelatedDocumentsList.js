@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
+import RelatedDocuments from '/imports/api/relatedDocuments/relatedDocuments';
 
-const DocumentsList = ({ documents }) => (
-  documents.length > 0 ? <ListGroup className="DocumentsList">
-    {documents.map(({ _id, sequence }) => (
-      <ListGroupItem key={ _id } href={`/relatedDocuments/${_id}`}>{ sequence }</ListGroupItem>
-    ))}
-  </ListGroup> :
-  <Alert bsStyle="warning">No related documents yet.</Alert>
-);
+export class RelatedDocumentsList extends Component {
+  getRelatedDocuments() {
+    return RelatedDocuments.find({documentId: this.props.documentId}).fetch();
+  }
 
-DocumentsList.propTypes = {
-  documents: React.PropTypes.array,
+  render() {
+    if (this.getRelatedDocuments().length > 0){
+      return (
+        <ListGroup className="DocumentsList">
+          { this.getRelatedDocuments().map(({ _id, sequence }) => (
+            <ListGroupItem key={ _id }>{ sequence }</ListGroupItem>
+          )) }
+        </ListGroup>
+      );
+    } else {
+      return (
+        <Alert bsStyle="warning">No related documents yet.</Alert>
+      );
+    }
+  }
+}
+
+RelatedDocumentsList.propTypes = {
+  documentId: React.PropTypes.string.isRequired,
 };
-
-export default DocumentsList;

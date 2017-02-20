@@ -9,7 +9,7 @@ Meteor.publish('documents.list', () => Documents.find({},{fields: {title: 1}}));
 // while this one includes all keys, but for a single document at a time
 Meteor.publish('documents.view', (_id) => {
   check(_id, String);
-  return Documents.find(_id);
+  return [ Documents.find(_id), RelatedDocuments.find({documentId: _id}) ];
 });
 
 Meteor.publish('documents.view.withRelated', (_id) => {

@@ -3,6 +3,7 @@ import { ButtonToolbar, ButtonGroup, Button, Alert } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { removeDocument } from '../../api/documents/methods';
+import { RelatedDocumentsList } from './RelatedDocumentsList';
 
 const handleRemove = (_id) => {
   if (confirm('Are you sure? This is permanent!')) {
@@ -32,7 +33,9 @@ const ViewDocument = ({ doc }) => (
       </ButtonToolbar>
     </div>
     <em>body:</em> { doc.body }<br/>
-    <em>createdAt:</em> { doc.createdAt && doc.createdAt.toLocaleString() }
+    <em>createdAt:</em> { doc.createdAt && doc.createdAt.toLocaleString() }<br/>
+    <em>_id:</em> {  doc._id }
+    <RelatedDocumentsList documentId={ doc._id }/>
   </div>
 );
 
