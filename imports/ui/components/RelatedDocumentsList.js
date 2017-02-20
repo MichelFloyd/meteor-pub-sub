@@ -3,15 +3,15 @@ import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
 import RelatedDocuments from '/imports/api/relatedDocuments/relatedDocuments';
 
 export class RelatedDocumentsList extends Component {
-  getRelatedDocuments() {
+  fetch() {
     return RelatedDocuments.find({documentId: this.props.documentId}).fetch();
   }
 
   render() {
-    if (this.getRelatedDocuments().length > 0){
+    if (this.fetch().length > 0){
       return (
         <ListGroup className="DocumentsList">
-          { this.getRelatedDocuments().map(({ _id, sequence }) => (
+          { this.fetch().map(({ _id, sequence }) => (
             <ListGroupItem key={ _id }>{ sequence }</ListGroupItem>
           )) }
         </ListGroup>
