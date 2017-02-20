@@ -1,3 +1,8 @@
+/* Here we are assuming that the list of related documents cannot change while the user is viewing the parent
+ * document. This allows us to use a non-reactive react component instead of using react-komposer.
+ * Also the parent document's subscription is already taking care of loading the related (child) documents so
+ * we don't have to wait for the subscription to be ready here, that's already been taken care of.
+ */
 import React, { Component, PropTypes } from 'react';
 import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
 import RelatedDocuments from '/imports/api/relatedDocuments/relatedDocuments';

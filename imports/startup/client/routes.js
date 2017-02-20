@@ -9,7 +9,7 @@ import Documents from '../../ui/pages/Documents';
 import DocumentsComposite from '../../ui/pages/Documents-composite';
 import NewDocument from '../../ui/pages/NewDocument';
 import EditDocument from '../../ui/containers/EditDocument';
-import ViewDocument from '../../ui/containers/ViewDocument';
+import ViewDocument from '../../ui/pages/ViewDocument';
 import Index from '../../ui/pages/Index';
 import Login from '../../ui/pages/Login';
 import NotFound from '../../ui/pages/NotFound';
