@@ -35,9 +35,9 @@ const ViewDocument = ({ doc }) => {
           </ButtonGroup>
         </ButtonToolbar>
       </div>
-      <em>_id:</em> {  doc._id }
-      <em>body:</em> { doc.body }<br/>
-      <em>createdAt:</em> { doc.createdAt && doc.createdAt.toLocaleString() }<br/>
+      _id: <em>{  doc._id }</em><br/>
+      body: <em>{ doc.body }</em><br/>
+      createdAt: <em>{ doc.createdAt && doc.createdAt.toLocaleString() }</em><br/>
       <RelatedDocumentsList documentId={ doc._id }/>
     </div>
   );

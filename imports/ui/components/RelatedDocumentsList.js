@@ -4,7 +4,7 @@
  * we don't have to wait for the subscription to be ready here, that's already been taken care of.
  */
 import React, { Component, PropTypes } from 'react';
-import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 import RelatedDocuments from '/imports/api/relatedDocuments/relatedDocuments';
 
 export class RelatedDocumentsList extends Component {
@@ -15,11 +15,14 @@ export class RelatedDocumentsList extends Component {
   render() {
     if (this.fetch().length > 0){
       return (
-        <ListGroup className="DocumentsList">
-          { this.fetch().map(({ _id, sequence }) => (
-            <ListGroupItem key={ _id }>{ sequence }</ListGroupItem>
-          )) }
-        </ListGroup>
+        <div>
+          <h5>{ this.fetch().length } Related Documents</h5>
+          <ul>
+            { this.fetch().map(({ _id, sequence }) => (
+              <li>_id: <em>{ _id }</em>, sequence: <em>{ sequence }</em></li>
+            )) }
+          </ul>
+        </div>
       );
     } else {
       return (
